@@ -1,11 +1,12 @@
+% Sourced from text "Pattern Recognition"
+
 function z=euclidClassifier(m, X)
-    [l,c]=size(m); % l=dimensionality, c=no. of classes
-    [l,N]=size(X); % N=no. of vectors
+    [temp,c]=size(m); 
+    [temp,N]=size(X);
     for i=1:N
         for j=1:c
-           t(j)=sqrt((X(:,i)-m(:,j))'*(X(:,i)-m(:,j)));
+           val(j)=sqrt((X(:,i)-m(:,j))'*(X(:,i)-m(:,j)));
         end
-        % Determining the maximum quantity Pi*p(x|wi)
-        [num,z(i)]=min(t);
+        [temp,z(i)]=min(val);
     end
 end

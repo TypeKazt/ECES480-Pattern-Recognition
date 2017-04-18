@@ -1,4 +1,6 @@
-function plotData(X,y,m)
+% Sourced from text "Pattern Recognition"
+
+function plotData(X,y,m,ti)
     [l,N]=size(X); % N=no. of data vectors, l=dimensionality
     [l,c]=size(m); % c=no. of classes
     if(l ~= 2)
@@ -7,11 +9,12 @@ function plotData(X,y,m)
     else
         pale=['r.'; 'g.'; 'b.'; 'y.'; 'm.'; 'c.'];
     end
-    figure(1)
+    figure()
+    title(ti)
     % Plot of the data vectors
     hold on
     for i=1:N
-        plot(X(1,i),X(2,i),pale(y(i),:))
+        plot(X(1,i),X(2,i),pale(y(i)+2,:))
     end
     % Plot of the class means
     for j=1:c
